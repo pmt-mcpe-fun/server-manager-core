@@ -24,7 +24,7 @@ Every method in the API is located under the class Ad5001\PSMCore\API.
 	```
 	- Add a plugin specific action for plugin Example which runs command 'example' with a selected prompt.
 	```php
-\Ad5001\PSMCore\API::addPluginSpecificAction(Server::getInstance()->getPluginManager()->getPlugin("Example"), "Ask for example", "example %s");
+	\Ad5001\PSMCore\API::addPluginSpecificAction(Server::getInstance()->getPluginManager()->getPlugin("Example"), "Ask for example", "example %s");
 	```
 	
 2. Displaying a notification
@@ -38,15 +38,15 @@ Example:
 
 3. Creating a window.
 If you need a larger space to display large informations, you can use a window.    
-Use a window to:
-[x] display some informations requested by the user    
-[x] add an online service login    
-[x] create forms that the user needs to complete (like config editing)
+Use a window to:    
+- [x] display some informations requested by the user    
+- [x] add an online service login    
+- [x] create forms that the user needs to complete (like config editing)    
 *DON'T* use a window to:     
-[ ] have a constant information window (mobile OSes dont like that).    
-[ ] display some basic informations. Use notifications for that.    
-[ ] have multiple windows at the same time.
-To integrate perfectly with the app UI, you should look at our [design guide](https://github.com/pmt-mcpe-fun/PSMCorePlugin/branch/master/DESIGN.md).    
+- [ ] have a constant information window (mobile OSes dont like that).    
+- [ ] display some basic informations. Use notifications for that.    
+- [ ] have multiple windows at the same time.
+To integrate perfectly with the app UI, you should look at our [design guide](https://github.com/pmt-mcpe-fun/PSMCorePlugin/blob/master/DESIGN.md).    
 Windows are HTML rendered with a nodejs integration. You can look at the [electron] api to get more infos and explore the src code of PSM to add some more integrations with the app.    
 Only one argument is required to create a window which is an array of options.    
 Possible options:
