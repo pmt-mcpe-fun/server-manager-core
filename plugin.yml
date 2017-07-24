@@ -1,0 +1,43 @@
+---
+name: PSMCore
+author:  Ad5001
+version: 1.0
+api: [3.0.0-ALPHA7]
+main: Ad5001\PSMCore\Main
+commands:
+ setcfg4psm:
+  usage: Internal 
+  permission: psmcore.internal
+  description: Internal command.
+ setmotd4psm:
+  usage: /setmotd4psm <motd>
+  permission: psmcore.internal
+  description: Sets the MOTD (Console only)
+ setviewdistance4psm:
+  usage: /setviewdistance4psm <chunks>
+  permission: psmcore.internal
+  description: Sets the view distance
+ getplayersforpsmsolongcommandthatimsurewontbefound:
+  usage: Internal 
+  permission: psmcore.internal
+  description: Internal command.
+ getloadedlevelsforpsmthatsasuperlongcommandthatibetyoucannotenterwithoutcopypaste:
+  usage: Internal 
+  permission: psmcore.internal
+  description: Internal command.
+ getplugins4psmthatwillbejavascriptobjectencodedjsonbutnomanagement:
+  usage: Internal 
+  permission: psmcore.internal
+  description: Internal command.
+ getactions4psmplzdontusethiscommandiknowitshardtoresistbutdontwhatdidijustsaidokwateveryoulostafewsecondsofyourlife:
+  usage: Internal 
+  permission: psmcore.internal
+  description: Internal command.
+ getplayerinfos4psmwoohoomakeawindowlikenooneneeverdidinapocketminepluginb4:
+  usage: Internal 
+  permission: psmcore.internal
+  description: Internal command.
+permissions:
+ psmcore.internal:
+  default: false
+...
