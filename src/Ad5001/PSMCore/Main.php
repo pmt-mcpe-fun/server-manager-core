@@ -92,7 +92,7 @@ class Main extends PluginBase{
 					"gamemode" => $pl->igetGamemode()
 				];
 			}
-			$sender->sendMessage(json_encode($pls));
+			$sender->sendMessage(json_encode(["psmplayers" => $pls], JSON_PRETTY_PRINT));
 			return true;
 			break;
 			case "getloadedlevelsforpsmthatsasuperlongcommandthatibetyoucannotenterwithoutcopypaste":
@@ -102,7 +102,7 @@ class Main extends PluginBase{
 					"name" => $lvl->getName() 
 				];
 			}
-			$sender->sendMessage(json_encode($lvls));
+			$sender->sendMessage(json_encode(["psmlevels" => $lvls], JSON_PRETTY_PRINT));
 			return true;
 			break;
 			case "getplugins4psmthatwillbejavascriptobjectencodedjsonbutnomanagement":
@@ -115,16 +115,16 @@ class Main extends PluginBase{
 					"apis" => $pl->getDescription()->getCompatibleApis()
 				];
 			}
-			$sender->sendMessage(json_encode($pls));
+			$sender->sendMessage(json_encode(["psmplugins" => $pls], JSON_PRETTY_PRINT));
 			return true;
 			break;
 			case "getactions4psmplzdontusethiscommandiknowitshardtoresistbutdontwhatdidijustsaidokwateveryoulostafewsecondsofyourlife":
-			echo json_encode([
+			echo json_encode(["psmActions" => [
 				"playerActions" => API::$playerActions,
 				"levelActions" => API::$levelActions,
 				"pluginsActions" => API::$pluginsActions,
 				"pluginsSpecificActions" => API::$pluginsSpecificActions
-			], JSON_PRETTY_PRINT);
+			]], JSON_PRETTY_PRINT);
 			return true;
 			break;
 			case "getplayerinfos4psmwoohoomakeawindowlikenooneneeverdidinapocketminepluginb4":
