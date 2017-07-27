@@ -84,38 +84,39 @@ class Main extends PluginBase{
 			break;
 			case "getplayersforpsmsolongcommandthatimsurewontbefound":
 			$pls = [];
-			foreach($server->getPlayers() as $pl){
+			foreach($this->getServer()->getOnlinePlayers() as $pl){
 				$pls[$pl->getName()] = [
 					"name" =>  $pl->getName(),
 					"op" => $pl->isOp(),
 					"whitelisted" => $pl->isWhitelisted(),
-					"gamemode" => $pl->igetGamemode()
+					"gamemode" => $pl->getGamemode()
 				];
 			}
-			$sender->sendMessage(json_encode(["psmplayers" => $pls], JSON_PRETTY_PRINT));
+			echo json_encode(["psmplayers" => $pls], JSON_PRETTY_PRINT);
 			return true;
 			break;
 			case "getloadedlevelsforpsmthatsasuperlongcommandthatibetyoucannotenterwithoutcopypaste":
 			$lvls = [];
-			foreach($server->getLevels() as $lvl){
+			foreach($this->getServer()->getLevels() as $lvl){
 				$lvls[$lvl->getName()] = [
 					"name" => $lvl->getName() 
 				];
 			}
-			$sender->sendMessage(json_encode(["psmlevels" => $lvls], JSON_PRETTY_PRINT));
+			echo json_encode(["psmlevels" => $lvls], JSON_PRETTY_PRINT);
 			return true;
 			break;
 			case "getplugins4psmthatwillbejavascriptobjectencodedjsonbutnomanagement":
 			$pls = [];
-			foreach($server->getPluginManager()->getPlugins() as $pl){
+			foreach($this->getServer()->getPluginManager()->getPlugins() as $pl){
 				$pls[$pl->getName()] = [
 					"name" => $pl->getName(),
-					"author" => $pl->getDescription()->getAuthor(),
+					"author" => $pl->getDescription()->getAuthors(),
 					"description" => $pl->getDescription()->getDescription(),
-					"apis" => $pl->getDescription()->getCompatibleApis()
+					"apis" => $pl->getDescription()->getCompatibleApis(),
+					"website" => $pl->getDescription()->getWebsite()
 				];
 			}
-			$sender->sendMessage(json_encode(["psmplugins" => $pls], JSON_PRETTY_PRINT));
+			echo json_encode(["psmplugins" => $pls], JSON_PRETTY_PRINT);
 			return true;
 			break;
 			case "getactions4psmplzdontusethiscommandiknowitshardtoresistbutdontwhatdidijustsaidokwateveryoulostafewsecondsofyourlife":

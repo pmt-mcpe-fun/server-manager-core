@@ -2,7 +2,7 @@
 name: PSMCore
 author:  Ad5001
 version: 1.0
-api: [3.0.0-ALPHA7]
+api: [3.0.0-ALPHA7, 3.0.0-ALPHA8]
 main: Ad5001\PSMCore\Main
 commands:
  setcfg4psm:
@@ -39,5 +39,5 @@ commands:
   description: Internal command.
 permissions:
  psmcore.internal:
-  default: false
+  default: op
 ...
