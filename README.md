@@ -30,10 +30,11 @@ Every method in the API is located under the class Ad5001\PSMCore\API.
 2. Displaying a notification
 Wanna send a notice to the server owner? Sending a notifications can remind him of doing some stuffs, provide a better support and more.    
 Displaying a notification is pretty easy. It uses the OS notifications system.    
-Displaying a notification requires 3 things: a title, a message, and, optionaly, a command callback.    
+Displaying a notification requires 3 things: a title, a message, and, optionaly, buttons and a command callback.   
+You can use %b in a command to get button's name.    
 Example:    
 ```php
-\Ad5001\PSMCore\API::displayNotification("Title", "Message", "cmd callback");
+\Ad5001\PSMCore\API::displayNotification("Title", "Message", ["OK", "Cancel"], "cmd callback");
 ```
 
 3. Creating a window.

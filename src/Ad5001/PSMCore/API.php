@@ -150,18 +150,20 @@ class API {
 	/**
 	 * Display a notification for the server OS. 
 	 * Should normally work even if the window is closed.
-	 * Use $cmdCb as a command callback when the notification is clicked.
+	 * Use $cmdCb as a command callback when the notification is clicked. Use %b for button clicked name.
 	 * 
 	 * @param {String} $title
 	 * @param {String} $msg 
+	 * @param {String[]} $buttons 
 	 * @param {String} $cmdCb
 	 * 
 	 * @return {Void}
 	 */
-	public static function displayNotification(string $title, string $msg, string $cmdCb = "nothing"){
+	public static function displayNotification(string $title, string $msg, array $buttons = ["OK"], string $cmdCb = "nothing"){
 		echo json_encode(["psmnotification" => [
 			"title" => $title,
 			"message" => $msg,
+			"actions" => $buttons,
 			"callback" => $cmdCb
 		]], JSON_PRETTY_PRINT); // Sends a message to the app to display a notification.
 	}
