@@ -1,0 +1,7 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/pmt-mcpe-fun/psm.core.plugin
+branches:
+- master
+projects:
+  psm.core.plugin:
+    path: ""
+...
