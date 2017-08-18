@@ -55,16 +55,16 @@ class Main extends PluginBase{
 			switch($args[0]) {
 				case "setcfg4psm":
 					switch(true){
-						case $args[1] == "on" || $args[1] == "off": // Boolean
-						$this->getServer()->setConfigBool($args[0], $args[1] == "on" ? true : false);
+						case $args[2] == "on" || $args[2] == "off": // Boolean
+						$this->getServer()->setConfigBool($args[1], $args[2] == "on" ? true : false);
 						break;
-						case preg_match("/^[0-9]+$/", $args[1]): // Int
-						$this->getServer()->setConfigInt($args[0], intval($args[1]));
+						case preg_match("/^[0-9]+$/", $args[2]): // Int
+						$this->getServer()->setConfigInt($args[1], intval($args[2]));
 						break;
 						default: // String
-						$n = $args[0];
-						unset($args[0]);
-						$this->getServer()->setConfigString($args[0], implode(" ", $args[1]));
+						$n = $args[1];
+						unset($args[1]);
+						$this->getServer()->setConfigString($n, implode(" ", $args));
 						break;
 					}
 					return true;
@@ -75,10 +75,16 @@ class Main extends PluginBase{
 					return true;
 					break;
 				case "setviewdistance4psm":
-					$this->getServer()->setConfigInt("view-distance", intval($args[0]));
+					$this->getServer()->setConfigInt("view-distance", intval($args[1]));
 					foreach($this->getServer()->getPlayers() as $p) {
-					$p->setViewDistance(intval($args[0]));
+						$p->setViewDistance(intval($args[1]));
 					}
+					return true;
+					break;
+				case "createlevel4psm":
+					$generator = Generator::getGenerator($args[2]);
+					$this->getServer()->generateLevel($args[1], $args[3], $generator);
+					$this->getServer()->loadLevel($args[1]);
 					return true;
 					break;
 				case "getplayersforpsmsolongcommandthatimsurewontbefound":
