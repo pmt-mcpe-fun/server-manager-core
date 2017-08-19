@@ -125,7 +125,8 @@ class Main extends PluginBase{
 					break;
 				case "getlevelsgeneratorsfourpsmniceviewcheater":
 					$gens = [];
-					foreach(Generator::getGeneratorList() as $gen){
+					foreach(Generator::getGeneratorList() as $genName){
+						$gen = Generator::getGenerator($gen);
 						$gens[$gen->getName()] = [
 							"name" => $gen->getName(),
 							"settings" => $pl->getSetting()
