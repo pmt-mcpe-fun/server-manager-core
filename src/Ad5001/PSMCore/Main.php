@@ -83,7 +83,7 @@ class Main extends PluginBase{
 					break;
 				case "createlevel4psm":
 					$generator = Generator::getGenerator($args[2]);
-					$this->getServer()->generateLevel($args[1], $args[3], $generator);
+					$this->getServer()->generateLevel($args[1], intval($args[3]), $generator);
 					$this->getServer()->loadLevel($args[1]);
 					return true;
 					break;
@@ -126,10 +126,10 @@ class Main extends PluginBase{
 				case "getlevelsgeneratorsfourpsmniceviewcheater":
 					$gens = [];
 					foreach(Generator::getGeneratorList() as $genName){
-						$gen = Generator::getGenerator($gen);
-						$gens[$gen->getName()] = [
-							"name" => $gen->getName(),
-							"settings" => $pl->getSetting()
+						$gen = Generator::getGenerator($genName);
+						// safe_var_dump($gen);
+						$gens[$genName] = [
+							"name" => $genName
 						];
 					}
 					echo json_encode(["psmgenerators" => $gens], JSON_PRETTY_PRINT);
