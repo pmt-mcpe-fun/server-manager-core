@@ -121,6 +121,7 @@ class Main extends PluginBase{
 							"website" => $pl->getDescription()->getWebsite()
 						];
 					}
+					echo json_encode(["psmplugins" => $pls], JSON_PRETTY_PRINT);
 					return true;
 					break;
 				case "getlevelsgeneratorsfourpsmniceviewcheater":
