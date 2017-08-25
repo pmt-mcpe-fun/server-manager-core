@@ -27,18 +27,6 @@ use pocketmine\level\generator\Generator;
 use Ad5001\PSMCore\API;
 class Main extends PluginBase{
 	/**
-	 * Checks when the plugin enables.
-	 */
-	public function onEnable(){
-		$this->reloadConfig();
-	}
-	/**
-	 * When the plugin loads
-	 */
-	public function onLoad(){
-		$this->saveDefaultConfig();
-	}
-	/**
 	 * Checks when a command executes
 	 * 
 	 * @param {\pocketmine\command\CommandSender} $sender
