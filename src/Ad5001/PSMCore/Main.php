@@ -26,6 +26,15 @@ use pocketmine\Player;
 use pocketmine\level\generator\Generator;
 use Ad5001\PSMCore\API;
 class Main extends PluginBase{
+	
+	/** 
+	 * Checks when the plugin enables to load all level so that people would easily see them
+	 */
+	public function onEnable(){
+		foreach(array_diff(scandir($this->getServer()->getDataPath() . "worlds"), [".", ".."]) as $world){
+			$this->getServer()->loadLevel($world);	
+		}
+	}
 	/**
 	 * Checks when a command executes
 	 * 
