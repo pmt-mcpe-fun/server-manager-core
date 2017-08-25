@@ -63,3 +63,13 @@ Example:
 ```
 
 4. TODOs: Custom tabs
+
+## Tell PSM about your plugin
+If you want to use the PSM GUI API into your plugin, you might want the users to know it. For that, it's simple as adding this key to your plugin.yml:
+```yaml
+psmimplements: true
+```
+but if you also want to notice the user that your plugin doesn't have any API, just change the true to false in this key:
+```yaml
+psmimplements: true
+```
