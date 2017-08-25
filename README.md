@@ -71,5 +71,5 @@ psmimplements: true
 ```
 but if you also want to notice the user that your plugin doesn't have any API, just change the true to false in this key:
 ```yaml
-psmimplements: true
+psmimplements: false
 ```
